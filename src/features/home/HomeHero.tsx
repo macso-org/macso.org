@@ -7,9 +7,7 @@ import {
   Highlight,
 } from '~/components/ui/Hero'
 import { ChatIcon, PencilIcon } from '~/components/ui/icons'
-import animations from '~/styles/animations.module.css'
 import { site } from '~/data/site'
-import styles from './HomeHero.module.css'
 
 export function HomeHero() {
   return (
@@ -28,10 +26,6 @@ export function HomeHero() {
           Discord Server
         </Button>
       </HeroActions>
-      <p className={`${styles.ps} ${animations.rise4}`}>
-        p.s. we're hiring!{' '}
-        <a href="/careers/">join the MACSO leadership team &rarr;</a>
-      </p>
     </Hero>
   )
 }

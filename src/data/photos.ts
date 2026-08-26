@@ -30,4 +30,6 @@ export const macso24Photos: readonly Photo[] = MACSO_24_INDICES.map((n) => ({
   src: `https://static.macso.org/output/low_res/_${n}.webp`,
   alt: `MACSO 2024 contest photo ${n}`,
   caption: `macso '24 · #${n}`,
+  width: 800,
+  height: 600,
 }))

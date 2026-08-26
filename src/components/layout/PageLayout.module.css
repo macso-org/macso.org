@@ -4,8 +4,22 @@
   padding: 0 28px;
 }
 
+.footerBelowFold {
+  min-height: calc(100svh - 62px);
+  display: flex;
+  flex-direction: column;
+}
+
+.footerBelowFold > section:last-child {
+  flex: 1;
+}
+
 @media (max-width: 768px) {
   .main {
     padding: 0 18px;
+  }
+
+  .footerBelowFold {
+    min-height: calc(100svh - 84px);
   }
 }

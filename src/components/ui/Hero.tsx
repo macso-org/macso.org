@@ -22,7 +22,7 @@ type HeroStatusProps = {
 
 export function HeroStatus({ label, value }: HeroStatusProps) {
   return (
-    <p className={`${styles.status} ${animations.rise2}`} role="status">
+    <p className={`${styles.status} ${animations.rise2}`}>
       <strong>{label}</strong>
       <span className={styles.arrow} aria-hidden="true">
         &rarr;

@@ -1,0 +1,93 @@
+.context {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(28px, 6vw, 68px);
+  align-items: center;
+  padding: 34px 0 40px;
+  border-top: 2px dashed var(--rule);
+}
+
+.eyebrow,
+.noteLabel {
+  color: var(--blue-deep);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about h2,
+.eligibility h2 {
+  color: var(--navy);
+  font-family: var(--font-hand);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.about h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 7px 0 13px;
+}
+
+.about > p:last-child {
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.eligibility {
+  composes: card from '../../styles/surfaces.module.css';
+  position: relative;
+  padding: 26px 28px 24px;
+  background: var(--note-bg);
+  transform: rotate(0.5deg);
+}
+
+.eligibility::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  width: 76px;
+  height: 22px;
+  background: color-mix(in srgb, var(--blue) 62%, transparent);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.eligibility h2 {
+  font-size: 1.55rem;
+  margin: 5px 0 12px;
+}
+
+.eligibility ul {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+}
+
+.eligibility li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.eligibility li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .context {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 34px 0 46px;
+  }
+
+  .eligibility {
+    transform: none;
+  }
+}

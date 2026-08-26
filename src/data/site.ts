@@ -7,13 +7,6 @@ export const site = {
   discord: 'https://discord.gg/cX7tmKwJ8f',
   instagram:
     'https://www.instagram.com/bhs.computerscience?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw==',
-  instagramHandle: '@bhs.computerscience',
-  venue: {
-    name: 'The Foundry',
-    address: '101 Rogers Street, Cambridge, MA 02142',
-    lat: 42.36662,
-    lng: -71.08276,
-  },
   credits: {
     lucasChen: 'https://lucasrchen.com',
     mishaZhernevskii:
@@ -23,14 +16,21 @@ export const site = {
 
 export type NavLink = {
   readonly label: string
-  readonly hash: string
+  readonly href: string
+  readonly page: 'home' | 'team' | 'contest-2025' | 'contest-2024'
 }
 
 export const navLinks: readonly NavLink[] = [
-  { label: 'Highlights', hash: '#highlights' },
-  { label: 'Results', hash: '#results' },
-  { label: 'FAQ', hash: '#faq' },
-  { label: 'Team', hash: '#team' },
-  { label: 'Sponsors', hash: '#sponsors' },
-  { label: 'Location', hash: '#location' },
+  { label: 'Home', href: '/', page: 'home' },
+  { label: 'Team', href: '/team/', page: 'team' },
+  {
+    label: '2025 Contest',
+    href: '/contests/2025/',
+    page: 'contest-2025',
+  },
+  {
+    label: '2024 Contest',
+    href: '/contests/2024/',
+    page: 'contest-2024',
+  },
 ]

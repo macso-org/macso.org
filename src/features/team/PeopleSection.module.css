@@ -1,0 +1,138 @@
+.lede {
+  max-width: 58ch;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 30px auto 10px;
+}
+
+.person {
+  composes: pinned from '../../styles/surfaces.module.css';
+  min-width: 0;
+  padding: 30px 22px 24px;
+  text-align: center;
+  transition:
+    box-shadow var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+.people .person:nth-child(3n + 1) {
+  transform: rotate(-0.5deg);
+}
+
+.people .person:nth-child(3n + 2) {
+  transform: rotate(0.4deg);
+}
+
+.people .person:nth-child(3n + 3) {
+  transform: rotate(-0.3deg);
+}
+
+.portraitLink {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.avatar {
+  display: block;
+  width: 124px;
+  height: 124px;
+  margin: 0 auto;
+  object-fit: cover;
+  border: 2.5px solid var(--navy);
+  border-radius: 48% 52% 55% 45% / 52% 46% 54% 48%;
+}
+
+.identity h3 {
+  margin-top: 16px;
+  color: var(--navy);
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.role {
+  margin-top: 4px;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.featuredWrap {
+  display: flex;
+  justify-content: center;
+  margin: 28px auto 20px;
+}
+
+.featured {
+  width: min(100%, 680px);
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  column-gap: 28px;
+  align-items: center;
+  text-align: left;
+}
+
+.featured .avatar {
+  width: 142px;
+  height: 142px;
+}
+
+.featured .identity {
+  grid-column: 1;
+}
+
+.featured .bio {
+  grid-column: 2;
+  margin-top: 0;
+}
+
+.bio {
+  margin-top: 10px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .person:hover {
+    transform: translateY(-2px) rotate(0deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .people {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .people .person {
+    transform: none;
+  }
+
+  .featured {
+    display: block;
+    text-align: center;
+  }
+
+  .featured .identity h3 {
+    margin-top: 16px;
+  }
+
+  .bio {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person {
+    transition: none;
+  }
+}

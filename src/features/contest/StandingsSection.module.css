@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 30px;
   align-items: flex-start;
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .scorecard {
@@ -55,7 +55,8 @@
   border-bottom: 1px solid var(--rule-strong);
 }
 
-.scorecard th:first-child {
+.scorecard th:first-child,
+.scorecard td:first-child {
   padding-left: 22px;
 }
 
@@ -65,7 +66,6 @@
 }
 
 .scorecard td:first-child {
-  padding-left: 22px;
   width: 70px;
 }
 
@@ -74,16 +74,16 @@
   padding-bottom: 14px;
 }
 
-.name {
-  font-weight: 700;
+.name,
+.award {
   color: var(--navy);
+  font-weight: 700;
 }
 
-.award {
+.award,
+.mention {
   font-family: var(--font-hand);
-  font-weight: 700;
   font-size: 1.1rem;
-  color: var(--navy);
 }
 
 .awardFirst {
@@ -98,8 +98,6 @@
 }
 
 .mention {
-  font-family: var(--font-hand);
-  font-weight: 400;
-  font-size: 1rem;
   color: var(--ink-muted);
+  font-size: 1rem;
 }

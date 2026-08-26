@@ -1,14 +1,15 @@
 import type { Photo } from '~/data/photos'
 import styles from './PhotoStrip.module.css'
 
-type PhotoStripProps = {
-  photos: readonly Photo[]
-}
-
-export function PhotoStrip({ photos }: PhotoStripProps) {
+export function PhotoStrip({ photos }: { photos: readonly Photo[] }) {
   return (
-    <div className={styles.strip}>
-      {photos.map((photo) => (
+    <div
+      className={styles.strip}
+      role="region"
+      aria-label="Contest photo gallery"
+      tabIndex={0}
+    >
+      {photos.map((photo, index) => (
         <figure className={styles.photo} key={photo.src}>
           <span className={styles.tape} aria-hidden="true" />
           <img
@@ -16,7 +17,8 @@ export function PhotoStrip({ photos }: PhotoStripProps) {
             alt={photo.alt}
             width={photo.width}
             height={photo.height}
-            loading="lazy"
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchPriority={index === 0 ? 'high' : undefined}
             decoding="async"
           />
           <figcaption>{photo.caption}</figcaption>

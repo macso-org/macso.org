@@ -27,13 +27,6 @@
   transform: rotate(-0.6deg);
 }
 
-.primary:hover {
-  background: var(--accent-surface-hover);
-  color: var(--accent-text);
-  transform: translate(2px, 2px) rotate(-0.6deg);
-  box-shadow: 1px 1px 0 rgba(59, 111, 175, 0.45);
-}
-
 .ghost {
   color: var(--navy);
   background: var(--control-bg);
@@ -42,11 +35,30 @@
   transform: rotate(0.5deg);
 }
 
-.ghost:hover {
-  background: var(--surface-hover);
-  color: var(--navy);
-  transform: translate(2px, 2px) rotate(0.5deg);
+.primary:active {
+  transform: translate(2px, 2px) rotate(-0.6deg) scale(0.97);
+  box-shadow: 1px 1px 0 rgba(59, 111, 175, 0.45);
+}
+
+.ghost:active {
+  transform: translate(2px, 2px) rotate(0.5deg) scale(0.97);
   box-shadow: 1px 1px 0 rgba(31, 44, 92, 0.25);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover {
+    background: var(--accent-surface-hover);
+    color: var(--accent-text);
+    transform: translate(2px, 2px) rotate(-0.6deg);
+    box-shadow: 1px 1px 0 rgba(59, 111, 175, 0.45);
+  }
+
+  .ghost:hover {
+    background: var(--surface-hover);
+    color: var(--navy);
+    transform: translate(2px, 2px) rotate(0.5deg);
+    box-shadow: 1px 1px 0 rgba(31, 44, 92, 0.25);
+  }
 }
 
 @media (max-width: 768px) {

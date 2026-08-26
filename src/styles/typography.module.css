@@ -43,9 +43,11 @@
     text-underline-offset var(--motion-fast) var(--ease-out);
 }
 
-.link:hover {
-  color: var(--blue-deep);
-  text-underline-offset: 6px;
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    color: var(--blue-deep);
+    text-underline-offset: 6px;
+  }
 }
 
 .highlight {

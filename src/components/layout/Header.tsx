@@ -11,8 +11,6 @@ type HeaderProps = {
 export function Header({ page }: HeaderProps) {
   const [theme, setTheme] = useState(getPreferredTheme)
   const { topId } = pageMeta[page]
-  const isHome = page === 'home'
-  const hashBase = isHome ? '' : '/'
 
   useEffect(() => {
     applyTheme(theme)
@@ -26,12 +24,19 @@ export function Header({ page }: HeaderProps) {
 
   return (
     <header className={styles.header} id={topId}>
-      <a className={styles.brand} href={isHome ? '#notebook-top' : '/'}>
+      <a
+        className={styles.brand}
+        href={page === 'home' ? '#notebook-top' : '/'}
+      >
         macso<span>.</span>
       </a>
       <nav className={styles.nav} aria-label="Main">
-        {navLinks.map(({ label, hash }) => (
-          <a key={hash} href={`${hashBase}${hash}`}>
+        {navLinks.map(({ label, href, page: targetPage }) => (
+          <a
+            key={href}
+            href={href}
+            aria-current={page === targetPage ? 'page' : undefined}
+          >
             {label}
           </a>
         ))}
@@ -58,7 +63,7 @@ export function Header({ page }: HeaderProps) {
           href="/careers/"
           aria-current={page === 'careers' ? 'page' : undefined}
         >
-          We're hiring &rarr;
+          We're hiring <span aria-hidden="true">&rarr;</span>
         </a>
       </nav>
     </header>

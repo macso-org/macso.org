@@ -17,10 +17,6 @@
     border-color var(--motion-fast) var(--ease-out);
 }
 
-.card:hover {
-  transform: rotate(0deg) !important;
-}
-
 .roles .card:nth-child(6n + 1) {
   transform: rotate(-0.4deg);
 }
@@ -63,9 +59,15 @@
   box-shadow: none;
 }
 
-.open:hover {
-  border-color: var(--blue-deep);
-  box-shadow: none;
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: rotate(0deg) !important;
+  }
+
+  .open:hover {
+    border-color: var(--blue-deep);
+    box-shadow: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

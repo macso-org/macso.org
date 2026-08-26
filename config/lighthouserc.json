@@ -2,7 +2,13 @@
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
-      "url": ["http://localhost/", "http://localhost/careers/"],
+      "url": [
+        "http://localhost/",
+        "http://localhost/team/",
+        "http://localhost/careers/",
+        "http://localhost/contests/2025/",
+        "http://localhost/contests/2024/"
+      ],
       "numberOfRuns": 3
     },
     "assert": {

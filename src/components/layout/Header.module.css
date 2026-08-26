@@ -27,10 +27,6 @@
   transition: color var(--motion-fast) var(--ease-out);
 }
 
-.brand:hover {
-  color: var(--blue-deep);
-}
-
 .nav {
   display: flex;
   align-items: center;
@@ -44,40 +40,45 @@
   font-size: 0.88rem;
   font-weight: 700;
   transition:
+    transform var(--motion-fast) var(--ease-out),
     color var(--motion-fast) var(--ease-out),
     text-underline-offset var(--motion-fast) var(--ease-out);
 }
 
-.nav a:hover {
-  color: var(--blue-deep);
+.nav a.hire {
+  display: inline-block;
+  padding: 5px 15px 7px;
+  color: var(--accent-text);
+  background: var(--accent-surface);
+  box-shadow: 2px 3px 0 color-mix(in srgb, var(--blue) 50%, transparent);
+  font-family: var(--font-hand);
+  font-size: 0.96rem;
+  text-decoration: none;
+  transform: rotate(-1deg);
+}
+
+.nav a.hire[aria-current='page'] {
+  color: var(--accent-text);
+  background: var(--accent-surface-hover);
+  text-decoration: none;
+  transform: rotate(0deg);
+}
+
+.nav a.hire:active {
+  transform: scale(0.97);
+}
+
+.nav a[aria-current='page'] {
+  color: var(--navy);
   text-decoration: underline;
-  text-underline-offset: 5px;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--blue);
+  text-underline-offset: 5px;
 }
 
-.nav a.hire {
-  font-family: var(--font-hand);
-  font-weight: 700;
-  font-size: 1.02rem;
-  color: var(--accent-text);
-  text-decoration: none;
-  background: var(--accent-surface);
-  padding: 5px 16px 7px;
-  box-shadow: 2px 3px 0 color-mix(in srgb, var(--blue) 50%, transparent);
-  transform: rotate(-1.5deg);
-  display: inline-block;
-  transition:
-    transform var(--motion-fast) var(--ease-out),
-    background-color var(--motion-fast) var(--ease-out),
-    box-shadow var(--motion-fast) var(--ease-out);
-}
-
-.nav a.hire:hover {
-  transform: rotate(0deg);
-  background: var(--accent-surface-hover);
-  color: var(--accent-text);
-  text-decoration: none;
+.nav a:active,
+.themeButton:active {
+  transform: scale(0.97);
 }
 
 .themeButton {
@@ -102,14 +103,6 @@
     transform var(--motion-fast) var(--ease-out);
 }
 
-.themeButton:hover {
-  background: var(--paper-blue);
-  box-shadow:
-    3px 5px 0 color-mix(in srgb, var(--blue) 27%, transparent),
-    0 5px 12px color-mix(in srgb, var(--navy) 10%, transparent);
-  transform: translateY(-1px);
-}
-
 .themeButton:active {
   box-shadow: 1px 2px 0 color-mix(in srgb, var(--blue) 24%, transparent);
   transform: translate(2px, 2px);
@@ -132,18 +125,95 @@
   transition: transform var(--motion-fast) var(--ease-out);
 }
 
-.themeButton:hover svg {
-  transform: rotate(12deg);
+@media (hover: hover) and (pointer: fine) {
+  .brand:hover {
+    color: var(--blue-deep);
+  }
+
+  .nav a:hover {
+    color: var(--blue-deep);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--blue);
+  }
+
+  .nav a.hire:hover {
+    color: var(--accent-text);
+    background: var(--accent-surface-hover);
+    text-decoration: none;
+    transform: rotate(0deg);
+  }
+
+  .themeButton:hover {
+    background: var(--paper-blue);
+    box-shadow:
+      3px 5px 0 color-mix(in srgb, var(--blue) 27%, transparent),
+      0 5px 12px color-mix(in srgb, var(--navy) 10%, transparent);
+    transform: translateY(-1px);
+  }
+
+  .themeButton:hover svg {
+    transform: rotate(12deg);
+  }
 }
 
 @media (max-width: 768px) {
   .header {
     padding: 12px 18px;
   }
+
+  .nav {
+    gap: 2px 12px;
+  }
+
+  .nav a {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: block;
+    padding: 10px 14px 9px;
+  }
+
+  .brand {
+    display: inline-block;
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    width: 100%;
+    margin-top: 9px;
+  }
+
+  .nav a {
+    padding: 3px 1px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .themeButton {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav a.hire {
+    position: absolute;
+    top: 8px;
+    right: 58px;
+    padding: 5px 11px 6px;
+    font-size: 0.82rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav a.hire,
   .themeButton,
   .themeButton svg,
   .brand,

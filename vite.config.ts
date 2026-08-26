@@ -16,6 +16,13 @@ export default defineConfig({
         careers: fileURLToPath(
           new URL('./careers/index.html', import.meta.url),
         ),
+        team: fileURLToPath(new URL('./team/index.html', import.meta.url)),
+        contest2025: fileURLToPath(
+          new URL('./contests/2025/index.html', import.meta.url),
+        ),
+        contest2024: fileURLToPath(
+          new URL('./contests/2024/index.html', import.meta.url),
+        ),
       },
     },
   },
