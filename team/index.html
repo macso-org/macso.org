@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet the MACSO Team</title>
+    <meta
+      name="description"
+      content="Meet the students, founders, and mentors behind the Massachusetts Computer Science Olympiad."
+    />
+    <link rel="canonical" href="https://macso.org/team/" />
+    <meta name="author" content="Lucas Chen, Mikhail Zhernevskii" />
+    <meta name="theme-color" content="#fbfcff" />
+    <meta name="msapplication-TileColor" content="#1f2c5c" />
+    <script>
+      try {
+        const theme = localStorage.getItem('macso-theme')
+        document.documentElement.dataset.theme =
+          theme === 'light' || theme === 'dark'
+            ? theme
+            : matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+      } catch {}
+    </script>
+    <meta property="og:title" content="Meet the MACSO Team" />
+    <meta
+      property="og:description"
+      content="Meet the students, founders, and mentors behind the Massachusetts Computer Science Olympiad."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://macso.org/team/" />
+    <meta property="og:site_name" content="MACSO" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:image"
+      content="https://macso.org/images/brand/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="MACSO: Massachusetts Computer Science Olympiad"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Meet the MACSO Team" />
+    <meta
+      name="twitter:description"
+      content="Meet the students, founders, and mentors behind the Massachusetts Computer Science Olympiad."
+    />
+    <meta
+      name="twitter:image"
+      content="https://macso.org/images/brand/og-image.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/icons/favicon-32x32.png"
+    />
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/images/icons/safari-pinned-tab.svg"
+      color="#1f2c5c"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TLJQ89CY7W"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-TLJQ89CY7W')
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/entries/team.tsx"></script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 .hero {
-  padding: 72px 0 56px;
+  padding: 60px 0 46px;
   position: relative;
   text-align: center;
 }
@@ -7,10 +7,10 @@
 .hero h1 {
   font-family: var(--font-hand);
   font-weight: 700;
-  font-size: clamp(2.6rem, 5.6vw, 4.2rem);
+  font-size: clamp(2.6rem, 5.2vw, 4rem);
   line-height: 1.12;
   color: var(--navy);
-  max-width: 18ch;
+  max-width: 21ch;
   margin: 10px auto 22px;
   text-wrap: balance;
 }
@@ -52,6 +52,26 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 48px 0 44px;
+    padding: 40px 0 36px;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero h1 {
+    max-width: 24ch;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(2.15rem, 10.5vw, 2.6rem);
+  }
+
+  .status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 8px;
   }
 }

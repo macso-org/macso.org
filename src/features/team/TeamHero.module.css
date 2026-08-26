@@ -1,0 +1,15 @@
+.eyebrow {
+  color: var(--blue-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.summary {
+  max-width: 58ch;
+  margin: -2px auto 28px;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  text-wrap: balance;
+}

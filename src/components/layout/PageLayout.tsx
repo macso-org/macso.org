@@ -1,5 +1,4 @@
-import { useRef, type ReactNode } from 'react'
-import { useSectionReveal } from '~/hooks/useSectionReveal'
+import type { ReactNode } from 'react'
 import { Footer } from './Footer'
 import { Header } from './Header'
 import { SkipLink } from './SkipLink'
@@ -9,17 +8,26 @@ import styles from './PageLayout.module.css'
 type PageLayoutProps = {
   page: PageId
   children: ReactNode
+  footerBelowFold?: boolean
 }
 
-export function PageLayout({ page, children }: PageLayoutProps) {
-  const mainRef = useRef<HTMLElement>(null)
-  useSectionReveal(mainRef)
-
+export function PageLayout({
+  page,
+  children,
+  footerBelowFold = false,
+}: PageLayoutProps) {
   return (
     <>
       <SkipLink />
       <Header page={page} />
-      <main className={styles.main} id="main" ref={mainRef}>
+      <main
+        className={
+          footerBelowFold
+            ? `${styles.main} ${styles.footerBelowFold}`
+            : styles.main
+        }
+        id="main"
+      >
         {children}
       </main>
       <Footer page={page} />

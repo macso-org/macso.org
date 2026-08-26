@@ -1,48 +1,115 @@
 .footer {
   border-top: 2px solid var(--navy);
   background: color-mix(in srgb, var(--footer-bg) 96%, transparent);
-  text-align: center;
-  font-size: 0.86rem;
-  line-height: 1.9;
-  padding: 36px 24px 44px;
+  padding: 26px 28px 18px;
   color: var(--footer-text);
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
-.footer p {
-  max-width: 720px;
-  margin: 4px auto;
+.footerInner {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.7fr);
+  gap: 28px 48px;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.about p {
+  max-width: 42ch;
+  margin-top: 8px;
+}
+
+.footerBrand {
+  color: var(--accent-text);
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.footerBrand span {
+  color: var(--blue);
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+}
+
+.footerNav a {
+  color: var(--footer-text);
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition:
+    color var(--motion-fast) var(--ease-out),
+    text-decoration-color var(--motion-fast) var(--ease-out);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  max-width: 1080px;
+  margin: 16px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--footer-text) 24%, transparent);
+  text-align: center;
 }
 
 .footer .creditLink {
   color: var(--accent-text);
 }
 
-.footer .creditLink:hover {
-  color: var(--accent-text);
-}
-
 .topLink {
   color: var(--accent-text);
   text-decoration: none;
-  font-size: 0.82rem;
   font-weight: 700;
   border-bottom: 2px dotted var(--blue);
   padding-bottom: 2px;
-  transition:
-    color var(--motion-fast) var(--ease-out),
-    border-color var(--motion-fast) var(--ease-out);
+  transition: border-color var(--motion-fast) var(--ease-out);
 }
 
-.topLink:hover {
-  color: var(--accent-text);
-  border-color: var(--accent-text);
+@media (hover: hover) and (pointer: fine) {
+  .footerNav a:hover {
+    color: var(--accent-text);
+    text-decoration-color: var(--blue);
+  }
+
+  .topLink:hover {
+    color: var(--accent-text);
+    border-color: var(--accent-text);
+  }
 }
 
-.note {
-  margin-top: 20px;
+@media (max-width: 720px) {
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .footerNav {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer {
+    padding-inline: 18px;
+  }
+
+  .footerNav {
+    gap: 8px 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .footerNav a,
   .topLink {
     transition: none;
   }

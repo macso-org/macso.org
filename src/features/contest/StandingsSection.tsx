@@ -1,10 +1,14 @@
 import { Section } from '~/components/ui/Section'
-import { scoreboards } from '~/data/results'
-import styles from './ResultsSection.module.css'
+import type { Scoreboard } from '~/data/results'
+import styles from './StandingsSection.module.css'
 
-export function ResultsSection() {
+export function StandingsSection({
+  scoreboards,
+}: {
+  scoreboards: readonly Scoreboard[]
+}) {
   return (
-    <Section id="results" title="MACSO '24 Final Standings">
+    <Section id="standings" title="Final standings">
       <div className={styles.results}>
         {scoreboards.map((board) => (
           <div className={styles.scorecard} key={board.title}>
@@ -17,7 +21,7 @@ export function ResultsSection() {
                 <thead>
                   <tr>
                     <th scope="col">Award</th>
-                    <th scope="col">Full Name</th>
+                    <th scope="col">Full name</th>
                     <th scope="col">School</th>
                   </tr>
                 </thead>
