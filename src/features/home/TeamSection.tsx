@@ -1,3 +1,4 @@
+import { LinkedInIcon, WebsiteIcon } from '~/components/ui/icons'
 import { Pin } from '~/components/ui/Pin'
 import { Section } from '~/components/ui/Section'
 import { founders, judge, staff, type Person } from '~/data/team'
@@ -6,7 +7,7 @@ import typography from '~/styles/typography.module.css'
 import styles from './TeamSection.module.css'
 
 function Avatar({ person }: { person: Person }) {
-  const img = (
+  return (
     <img
       className={styles.avatar}
       src={person.photo}
@@ -17,19 +18,6 @@ function Avatar({ person }: { person: Person }) {
       decoding="async"
     />
   )
-
-  if (!person.href) return img
-
-  return (
-    <a
-      href={person.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${person.name} (opens in a new tab)`}
-    >
-      {img}
-    </a>
-  )
 }
 
 function PersonCard({ person, wide }: { person: Person; wide?: boolean }) {
@@ -39,6 +27,21 @@ function PersonCard({ person, wide }: { person: Person; wide?: boolean }) {
       <Avatar person={person} />
       <p className={styles.name}>{person.name}</p>
       <p className={styles.role}>{person.role}</p>
+      {person.href && (
+        <a
+          className={styles.profileLink}
+          href={person.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${person.name} — ${new URL(person.href).hostname === 'www.linkedin.com' ? 'LinkedIn' : 'website'} (opens in a new tab)`}
+        >
+          {new URL(person.href).hostname === 'www.linkedin.com' ? (
+            <LinkedInIcon />
+          ) : (
+            <WebsiteIcon />
+          )}
+        </a>
+      )}
       {person.bio && (
         <details className={styles.bio}>
           <summary>read her bio &darr;</summary>

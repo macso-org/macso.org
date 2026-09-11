@@ -31,8 +31,24 @@
   transform: rotate(-0.3deg);
 }
 
-.person a {
-  display: inline-block;
+.person .profileLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-top: 6px;
+  color: var(--ink-muted);
+  border-radius: 6px;
+}
+
+.profileLink:hover {
+  color: var(--blue-deep);
+}
+
+.profileLink:focus-visible {
+  outline: 2px solid var(--blue-deep);
+  outline-offset: 2px;
 }
 
 .avatar {

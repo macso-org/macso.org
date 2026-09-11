@@ -53,3 +53,26 @@ export function MailIcon() {
     </StrokeIcon>
   )
 }
+
+export function LinkedInIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+    </svg>
+  )
+}
+
+export function WebsiteIcon() {
+  return (
+    <StrokeIcon width="20" height="20" strokeWidth={2}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.7 2.6 3.8 6 3.8 9s-1.1 6.4-3.8 9c-2.7-2.6-3.8-6-3.8-9S9.3 5.6 12 3z" />
+    </StrokeIcon>
+  )
+}
