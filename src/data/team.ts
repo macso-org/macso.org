@@ -8,15 +8,26 @@ export type Person = {
 
 export const staff: readonly Person[] = [
   {
-    name: 'Sergey Zatsepin',
-    role: 'director, problem author',
-    photo: '/images/team/sergey.webp',
-  },
-  {
     name: 'Ethan Chen',
-    role: 'head of fundraising',
+    role: 'director',
     photo: '/images/team/ethan.webp',
     href: 'https://www.linkedin.com/in/ethan-chen-8a33a8200/',
+  },
+  {
+    name: 'Harshitha Rajesh Chockalingam',
+    role: 'head of outreach',
+    photo: '/images/team/harshitha.webp',
+  },
+  {
+    name: 'Pranav',
+    role: 'head of operations',
+    photo: '/images/team/pranav.webp',
+    href: 'https://www.linkedin.com/in/pgundu/',
+  },
+  {
+    name: 'Sergey Zatsepin',
+    role: 'ex-director, problem author',
+    photo: '/images/team/sergey.webp',
   },
   {
     name: 'Dana',
