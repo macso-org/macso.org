@@ -17,11 +17,14 @@ export function HomeHero() {
       <HeroTitle>
         Massachusetts Computer Science <Highlight>Olympiad</Highlight>
       </HeroTitle>
-      <HeroStatus label="MACSO 2026" value="Late September 2026" />
+      <HeroStatus
+        label="MACSO 2026"
+        value={`Online round closes ${site.round.onlineClosesShort}`}
+      />
       <HeroActions>
         <Button href={site.registrationForm}>
           <PencilIcon />
-          Registration Form
+          Register for Round 1
         </Button>
         <Button href={site.discord} variant="ghost">
           <ChatIcon />

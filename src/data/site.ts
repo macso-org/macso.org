@@ -2,12 +2,20 @@ export const site = {
   name: 'Massachusetts Computer Science Olympiad',
   shortName: 'MACSO',
   email: 'team@macso.org',
-  registrationForm: 'https://forms.gle/aJY8tYkmpUaRMRQcA',
+  registrationForm: 'https://forms.gle/2ugC4RPD1aQqdgkbA',
   applicationForm: 'https://forms.gle/vrjsWqovnnwBsivb6',
+  grader: 'https://grader.macso.org',
   discord: 'https://discord.gg/cX7tmKwJ8f',
   instagram:
     'https://www.instagram.com/bhs.computerscience?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw==',
   instagramHandle: '@bhs.computerscience',
+  round: {
+    onlineOpens: 'Monday, September 7, 2026',
+    onlineCloses: 'Sunday, September 20, 2026',
+    onlineClosesShort: 'Sept 20',
+    onlineClosesTime: '11:59 PM ET',
+    finalDates: 'October 10–11, 2026',
+  },
   venue: {
     name: 'The Foundry',
     address: '101 Rogers Street, Cambridge, MA 02142',
@@ -27,6 +35,7 @@ export type NavLink = {
 }
 
 export const navLinks: readonly NavLink[] = [
+  { label: 'Format', hash: '#format' },
   { label: 'Highlights', hash: '#highlights' },
   { label: 'Results', hash: '#results' },
   { label: 'FAQ', hash: '#faq' },

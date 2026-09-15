@@ -6,7 +6,7 @@
     <title>Massachusetts Computer Science Olympiad | MACSO</title>
     <meta
       name="description"
-      content="MACSO 2026: a Massachusetts high-school programming competition in late September in Cambridge, hosted by Brookline Computer Science Initiative. Open to everyone, no qualification required."
+      content="MACSO 2026: a Massachusetts high-school programming competition hosted by Brookline Computer Science Initiative. Enter the online qualification round by September 20, then compete in the in-person final on October 10-11 in Cambridge."
     />
     <link rel="canonical" href="https://macso.org/" />
     <meta
@@ -37,7 +37,7 @@
     />
     <meta
       property="og:description"
-      content="MACSO 2026: a Massachusetts high-school programming competition in late September in Cambridge. Open to everyone, no qualification required."
+      content="MACSO 2026: online qualification round open to everyone through September 20, followed by an in-person final on October 10-11 in Cambridge, MA."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://macso.org/" />
@@ -60,7 +60,7 @@
     />
     <meta
       name="twitter:description"
-      content="MACSO 2026: a Massachusetts high-school programming competition in late September in Cambridge. Open to everyone, no qualification required."
+      content="MACSO 2026: online qualification round open to everyone through September 20, followed by an in-person final on October 10-11 in Cambridge, MA."
     />
     <meta
       name="twitter:image"
@@ -86,8 +86,10 @@
           {
             "@type": "Event",
             "name": "MACSO 2026",
-            "description": "The Massachusetts Computer Science Olympiad 2026: an in-person programming contest with 6 problems over 2 hours. Open to everyone, no qualification required.",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "description": "The Massachusetts Computer Science Olympiad 2026: an online qualification round open to everyone, followed by an in-person final for competitors who advance.",
+            "startDate": "2026-09-07",
+            "endDate": "2026-10-11",
+            "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
             "eventStatus": "https://schema.org/EventScheduled",
             "image": "https://macso.org/images/brand/og-image.png",
             "url": "https://macso.org/",
@@ -103,7 +105,45 @@
                 "addressCountry": "US"
               }
             },
-            "organizer": { "@id": "https://macso.org/#org" }
+            "organizer": { "@id": "https://macso.org/#org" },
+            "subEvent": [
+              {
+                "@type": "Event",
+                "name": "MACSO 2026 Online Qualification Round",
+                "description": "An online qualification round of 3-4 programming problems, open to everyone with no qualification requirement.",
+                "startDate": "2026-09-07",
+                "endDate": "2026-09-20T23:59:00-04:00",
+                "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "location": {
+                  "@type": "VirtualLocation",
+                  "url": "https://grader.macso.org"
+                },
+                "organizer": { "@id": "https://macso.org/#org" }
+              },
+              {
+                "@type": "Event",
+                "name": "MACSO 2026 In-Person Final",
+                "description": "The in-person final for competitors who advance out of the online qualification round.",
+                "startDate": "2026-10-10",
+                "endDate": "2026-10-11",
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "location": {
+                  "@type": "Place",
+                  "name": "The Foundry",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "101 Rogers Street",
+                    "addressLocality": "Cambridge",
+                    "addressRegion": "MA",
+                    "postalCode": "02142",
+                    "addressCountry": "US"
+                  }
+                },
+                "organizer": { "@id": "https://macso.org/#org" }
+              }
+            ]
           }
         ]
       }

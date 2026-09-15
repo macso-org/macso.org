@@ -1,5 +1,6 @@
 import { PageLayout } from '~/components/layout/PageLayout'
 import { FaqSection } from '~/features/home/FaqSection'
+import { FormatSection } from '~/features/home/FormatSection'
 import { HighlightsSection } from '~/features/home/HighlightsSection'
 import { HomeHero } from '~/features/home/HomeHero'
 import { IntroSection } from '~/features/home/IntroSection'
@@ -17,6 +18,7 @@ export function HomePage() {
     <PageLayout page="home">
       <HomeHero />
       <IntroSection />
+      <FormatSection />
       <HighlightsSection />
       <ResultsSection />
       <FaqSection />
