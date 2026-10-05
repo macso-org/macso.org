@@ -38,11 +38,17 @@ Run `bun run check` before opening a pull request.
 
 ## Environment variables
 
-The site currently requires no environment variables. If configuration is
-added later, document it in `.env.example` and keep real `.env` files local.
+The venue map requires a public CARTO Basemaps API key. Request a free key at
+https://carto.com/basemaps/apikey, copy `.env.example` to `.env.local`, and set
+`VITE_CARTO_API_KEY` to the issued key. Restart the dev server after changing it.
+
+For deployment, set `VITE_CARTO_API_KEY` in the Cloudflare Pages build environment
+and rebuild the site. Configure the key's allowed domains in CARTO for the site
+and any local or preview URLs you use. Without a valid key, CARTO displays an
+"API key required" image instead of map tiles.
 
 Values prefixed with `VITE_` are embedded in the browser bundle and must never
-contain secrets.
+contain secrets. Use a public Basemaps key here, not a private CARTO credential.
 
 ## Performance gates
 

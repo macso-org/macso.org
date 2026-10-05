@@ -27,9 +27,12 @@ const TILE_URLS = {
 } as const
 
 function getTileUrl() {
-  return document.documentElement.dataset.theme === 'dark'
-    ? TILE_URLS.dark
-    : TILE_URLS.light
+  const tileUrl =
+    document.documentElement.dataset.theme === 'dark'
+      ? TILE_URLS.dark
+      : TILE_URLS.light
+  const apiKey = import.meta.env.VITE_CARTO_API_KEY?.trim()
+  return apiKey ? `${tileUrl}?key=${encodeURIComponent(apiKey)}` : tileUrl
 }
 
 export function VenueMap() {

@@ -65,9 +65,9 @@ export const faqItems: readonly FaqItem[] = [
     answer: (
       <>
         The round starts with 3–4 programming problems, and we may add a few
-        more while the round is open, depending on how the round goes.
-        There's no fixed sitting — solve them at your own pace any time before
-        the deadline.
+        more while the round is open, depending on how the round goes. There's
+        no fixed sitting — solve them at your own pace any time before the
+        deadline.
       </>
     ),
   },
