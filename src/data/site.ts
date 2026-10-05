@@ -11,16 +11,16 @@ export const site = {
   instagramHandle: '@bhs.computerscience',
   round: {
     onlineOpens: 'Monday, September 7, 2026',
-    onlineCloses: 'Sunday, September 20, 2026',
-    onlineClosesShort: 'Sept 20',
+    onlineCloses: 'Saturday, October 10, 2026',
+    onlineClosesShort: 'Oct 10',
     onlineClosesTime: '11:59 PM ET',
-    finalDates: 'October 10–11, 2026',
+    finalDates: 'October 11, 2026',
   },
   venue: {
-    name: 'The Foundry',
-    address: '101 Rogers Street, Cambridge, MA 02142',
-    lat: 42.36662,
-    lng: -71.08276,
+    name: 'Brookline Teen Center',
+    address: '40 Aspinwall Ave, Brookline, MA 02446',
+    lat: 42.3369556,
+    lng: -71.1202631,
   },
   credits: {
     lucasChen: 'https://lucasrchen.com',

@@ -65,7 +65,7 @@ export const faqItems: readonly FaqItem[] = [
     answer: (
       <>
         The round starts with 3–4 programming problems, and we may add a few
-        more over the two weeks it's open, depending on how the round goes.
+        more while the round is open, depending on how the round goes.
         There's no fixed sitting — solve them at your own pace any time before
         the deadline.
       </>
@@ -111,7 +111,7 @@ export const faqItems: readonly FaqItem[] = [
       <>
         Yes! The online qualification round is open to anyone, anywhere, with no
         qualification requirement. The final is in person, so if you advance
-        you’ll need to make it to Cambridge on {site.round.finalDates}.
+        you’ll need to make it to Brookline on {site.round.finalDates}.
       </>
     ),
   },
