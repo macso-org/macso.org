@@ -1,40 +1,22 @@
 import { Button } from '~/components/ui/Button'
-import {
-  Hero,
-  HeroActions,
-  HeroStatus,
-  HeroTitle,
-  Highlight,
-} from '~/components/ui/Hero'
-import { ChatIcon, PencilIcon } from '~/components/ui/icons'
-import animations from '~/styles/animations.module.css'
+import { Hero, HeroActions, HeroTitle, Highlight } from '~/components/ui/Hero'
 import { site } from '~/data/site'
-import styles from './HomeHero.module.css'
+import styles from '~/pages/CompetitionPage.module.css'
 
 export function HomeHero() {
   return (
     <Hero>
+      <p>Massachusetts Computer Science Olympiad</p>
       <HeroTitle>
-        Massachusetts Computer Science <Highlight>Olympiad</Highlight>
+        MACSO <Highlight>2026</Highlight>
       </HeroTitle>
-      <HeroStatus
-        label="MACSO 2026"
-        value={`Online round closes ${site.round.onlineClosesShort}`}
-      />
-      <HeroActions>
-        <Button href={site.registrationForm}>
-          <PencilIcon />
-          Register for Round 1
-        </Button>
-        <Button href={site.discord} variant="ghost">
-          <ChatIcon />
-          Discord Server
-        </Button>
-      </HeroActions>
-      <p className={`${styles.ps} ${animations.rise4}`}>
-        p.s. we're hiring!{' '}
-        <a href="/careers/">join the MACSO leadership team &rarr;</a>
+      <p className={styles.description}>
+        Put your problem-solving skills to the test. Start online, then compete
+        for a place in the in-person final in Brookline.
       </p>
+      <HeroActions>
+        <Button href={site.registrationForm}>Register for Round 1</Button>
+      </HeroActions>
     </Hero>
   )
 }

@@ -1,13 +1,16 @@
+import type { Competition } from '~/data/competitions'
 import { Section } from '~/components/ui/Section'
-import { partners, sponsors } from '~/data/sponsors'
+import { partners, sponsorDirectory } from '~/data/sponsors'
 import typography from '~/styles/typography.module.css'
 import { TileGrid } from './TileGrid'
 
-export function SponsorsSection() {
+export function SponsorsSection({ competition }: { competition: Competition }) {
   return (
-    <Section id="sponsors" title="Our Sponsors">
+    <Section id="sponsors" title={`${competition.title} Sponsors`}>
       <p className={typography.lede}>A huge thanks to our sponsors.</p>
-      <TileGrid tiles={sponsors} />
+      <TileGrid
+        tiles={competition.sponsors.map((id) => sponsorDirectory[id])}
+      />
     </Section>
   )
 }

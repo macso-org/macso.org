@@ -57,7 +57,7 @@ CI rejects JavaScript or CSS growth beyond the limits in
 the current production build and should be raised only with an explanation in
 the pull request.
 
-Lighthouse runs three times against both generated pages. Accessibility, SEO,
+Lighthouse runs three times against all five generated pages. Accessibility, SEO,
 layout stability, blocking time, and best-practice regressions fail CI;
 performance-score and largest-contentful-paint regressions initially warn while
 the project establishes a stable baseline.
@@ -72,3 +72,13 @@ The Cloudflare Pages project should use:
 
 Do not set `SKIP_DEPENDENCY_INSTALL`. Cloudflare copies `public/_headers` into
 the production build and applies those response headers to static assets.
+
+## Competition editions
+
+The homepage is the current 2026 competition. Past editions live at
+`/competitions/2024/` and `/competitions/2025/`; organization content lives at
+`/about/`. Competition-specific sponsors, photos, and results are assigned in
+`src/data/competitions.ts`, with shared logo definitions in `src/data/sponsors.ts`.
+Archives only display available historical content, never current registration
+information. New editions need a static HTML entry, Vite input, sitemap entry,
+and Lighthouse URL in addition to their competition data.

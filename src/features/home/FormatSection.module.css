@@ -5,7 +5,7 @@
 
 .rounds {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 22px;
   margin: 28px 0 0;
   padding: 0;

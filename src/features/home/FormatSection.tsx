@@ -9,7 +9,11 @@ export function FormatSection() {
   const { round } = site
 
   return (
-    <Section id="format" title="How MACSO 2026 Works" className={styles.format}>
+    <Section
+      id="format"
+      title="Two rounds. One challenge."
+      className={styles.format}
+    >
       <p className={typography.lede}>
         This year MACSO runs in two rounds: an online qualification round that
         anyone can enter, followed by an in-person final for the competitors who
@@ -25,12 +29,6 @@ export function FormatSection() {
             <div>
               <dt>Opens</dt>
               <dd>{round.onlineOpens}</dd>
-            </div>
-            <div>
-              <dt>Closes</dt>
-              <dd>
-                {round.onlineCloses}, {round.onlineClosesTime}
-              </dd>
             </div>
             <div>
               <dt>Problems</dt>
@@ -75,36 +73,10 @@ export function FormatSection() {
             </div>
           </dl>
           <p className={styles.note}>
-            Your Round 1 performance determines advancement. Qualifiers will be
-            notified by email, and prizes will be awarded to our top
-            competitors, just like last year.
+            Qualifiers receive details by email. Top competitors receive prizes.
           </p>
         </li>
       </ol>
-
-      <div className={styles.steps}>
-        <h3 className={styles.stepsTitle}>Entering the online round</h3>
-        <ol>
-          <li>
-            Fill out the{' '}
-            <TextLink href={site.registrationForm}>
-              qualification round registration form
-            </TextLink>
-            . Everyone must complete this form, even if you already registered
-            through the earlier event form.
-          </li>
-          <li>
-            We email you a username and password for the contest grader. Check
-            your spam folder if it hasn't shown up, then email{' '}
-            <TextLink href={`mailto:${site.email}`}>{site.email}</TextLink>.
-          </li>
-          <li>
-            Sign in at <TextLink href={site.grader}>grader.macso.org</TextLink>{' '}
-            with those credentials and start submitting before{' '}
-            {round.onlineClosesTime} on {round.onlineCloses}.
-          </li>
-        </ol>
-      </div>
     </Section>
   )
 }

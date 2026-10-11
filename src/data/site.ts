@@ -11,10 +11,7 @@ export const site = {
   instagramHandle: '@bhs.computerscience',
   round: {
     onlineOpens: 'Monday, September 7, 2026',
-    onlineCloses: 'Saturday, October 10, 2026',
-    onlineClosesShort: 'Oct 10',
-    onlineClosesTime: '11:59 PM ET',
-    finalDates: 'October 11, 2026',
+    finalDates: 'late October 2026',
   },
   venue: {
     name: 'Brookline Teen Center',
@@ -28,18 +25,3 @@ export const site = {
       'https://www.linkedin.com/in/mikhail-zhernevskii-117477282',
   },
 } as const
-
-export type NavLink = {
-  readonly label: string
-  readonly hash: string
-}
-
-export const navLinks: readonly NavLink[] = [
-  { label: 'Format', hash: '#format' },
-  { label: 'Highlights', hash: '#highlights' },
-  { label: 'Results', hash: '#results' },
-  { label: 'FAQ', hash: '#faq' },
-  { label: 'Team', hash: '#team' },
-  { label: 'Sponsors', hash: '#sponsors' },
-  { label: 'Location', hash: '#location' },
-]

@@ -1,14 +1,11 @@
 import { Section } from '~/components/ui/Section'
-import { fall25Photos, macso24Photos } from '~/data/photos'
-import typography from '~/styles/typography.module.css'
+import type { Photo } from '~/data/photos'
 import { PhotoStrip } from './PhotoStrip'
 
-export function HighlightsSection() {
+export function HighlightsSection({ photos }: { photos: readonly Photo[] }) {
   return (
-    <Section id="highlights" title="MACSO Fall '25">
-      <PhotoStrip photos={fall25Photos} />
-      <h3 className={typography.subhead}>MACSO '24</h3>
-      <PhotoStrip photos={macso24Photos} />
+    <Section id="highlights" title="Competition Highlights">
+      <PhotoStrip photos={photos} />
     </Section>
   )
 }
