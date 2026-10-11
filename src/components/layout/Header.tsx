@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { navLinks } from '~/data/site'
+import { pastCompetitions } from '~/data/competitions'
 import { applyTheme, getPreferredTheme, saveTheme } from '~/lib/theme'
 import { type PageId, pageMeta } from './pages'
 import styles from './Header.module.css'
@@ -12,7 +12,6 @@ export function Header({ page }: HeaderProps) {
   const [theme, setTheme] = useState(getPreferredTheme)
   const { topId } = pageMeta[page]
   const isHome = page === 'home'
-  const hashBase = isHome ? '' : '/'
 
   useEffect(() => {
     applyTheme(theme)
@@ -30,11 +29,36 @@ export function Header({ page }: HeaderProps) {
         macso<span>.</span>
       </a>
       <nav className={styles.nav} aria-label="Main">
-        {navLinks.map(({ label, hash }) => (
-          <a key={hash} href={`${hashBase}${hash}`}>
-            {label}
-          </a>
-        ))}
+        <a href="/" aria-current={isHome ? 'page' : undefined}>
+          2026 Competition
+        </a>
+        <details
+          className={styles.archives}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') {
+              event.currentTarget.open = false
+              event.currentTarget.querySelector('summary')?.focus()
+            }
+          }}
+        >
+          <summary>Past Competitions</summary>
+          <div className={styles.archiveLinks}>
+            {pastCompetitions.map((edition) => (
+              <a
+                key={edition.year}
+                href={edition.href}
+                aria-current={
+                  page === `archive${edition.year}` ? 'page' : undefined
+                }
+              >
+                {edition.title}
+              </a>
+            ))}
+          </div>
+        </details>
+        <a href="/about/" aria-current={page === 'about' ? 'page' : undefined}>
+          About
+        </a>
         <button
           className={styles.themeButton}
           type="button"

@@ -47,3 +47,14 @@
     transition: none;
   }
 }
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 16px 0;
+}
+.links a {
+  color: var(--accent-text);
+}

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://macso.org/</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,4 +12,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url><loc>https://macso.org/about/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://macso.org/competitions/2024/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://macso.org/competitions/2025/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>

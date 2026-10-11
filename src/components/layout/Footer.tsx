@@ -17,16 +17,12 @@ export function Footer({ page }: FooterProps) {
         Brookline Computer Science Initiative (BCSI), a 501(c)(3) non-profit
         organization.
       </p>
-      <p>
-        Directed by{' '}
-        <TextLink
-          className={styles.creditLink}
-          href={site.credits.mishaZhernevskii}
-        >
-          Mikhail Zhernevskii
-        </TextLink>
-        , Jun 2024 - October 2024
-      </p>
+      <nav className={styles.links} aria-label="Footer">
+        <a href="/about/">About</a>
+        <a href="/careers/">Careers</a>
+        <a href={site.discord}>Discord</a>
+        <a href={`mailto:${site.email}`}>Contact</a>
+      </nav>
       <p>
         Website is made by{' '}
         <TextLink className={styles.creditLink} href={site.credits.lucasChen}>

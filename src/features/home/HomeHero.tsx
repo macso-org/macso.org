@@ -6,7 +6,7 @@ import {
   HeroTitle,
   Highlight,
 } from '~/components/ui/Hero'
-import { ChatIcon, PencilIcon } from '~/components/ui/icons'
+import { ChatIcon } from '~/components/ui/icons'
 import animations from '~/styles/animations.module.css'
 import { site } from '~/data/site'
 import styles from './HomeHero.module.css'
@@ -17,15 +17,8 @@ export function HomeHero() {
       <HeroTitle>
         Massachusetts Computer Science <Highlight>Olympiad</Highlight>
       </HeroTitle>
-      <HeroStatus
-        label="MACSO 2026"
-        value={`Online round closes ${site.round.onlineClosesShort}`}
-      />
+      <HeroStatus label="MACSO 2026" value="Online qualification round" />
       <HeroActions>
-        <Button href={site.registrationForm}>
-          <PencilIcon />
-          Register for Round 1
-        </Button>
         <Button href={site.discord} variant="ghost">
           <ChatIcon />
           Discord Server
